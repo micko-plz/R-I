@@ -3,13 +3,21 @@
 Don't be scared!
 
 ## Starting with VM
-TODO
+
+WORKSHOP #0
+Make this its own workshop
+Also explain the structure of future workshops
+How to best communicate with us
+Everything to get prepped for workshop #1
+Helps to start getting feedback early
+Put the linux motivation work into this workshop also -> presentation etc
+
 
 ## File and Folder layout on a Unix system
 
 Lets examine the standard unix folder structure, from the top down. This structure is defined as a [standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html) for Linux and unix-based operating systems.
 
-Navigate to the top directory visually via clicking on the "Files" icon in the *favourites* toolbar on the left of the screen. Open *+ Other Locations* followed by *Computer*.
+Navigate to the top directory visually via clicking on the "Files" icon in the *favorites* toolbar on the left of the screen. Open *+ Other Locations* followed by *Computer*.
 ![test](root_folder.png)
 
 The base folder is whats known as the system root directory. We'll now define the properties and contents of some of the subfolders in this directory.
