@@ -180,25 +180,70 @@ print("Current time and date: %s" % date_now)
 
 Save this file file also and try execute in the same way as above. You'll need to name it to something different to prevent a conflict with the bash script.
 
-For scripts that we want to be able to execute from anywhere, without having to specify the full path (/home/student/test_folder/welcome Atlas), just like we can run *date* from anywhere, we need to add our script to the known path where Linux can search for executables.
+For scripts that we want to be able to execute from anywhere, without having to specify the full path (/home/student/test_folder/welcome Atlas), just like we can run *date* from anywhere, we need to add our script to a known path where Linux can search for executables.
 
-This path is stored as global variable with name *PATH* and whose value can observed via:
+This path is stored as global variable with name *PATH* and whose value can observed via the script below which is a colon separated list of path to directories containing executable binaries (*bin == binaries / executables*).
 
 ``` bash
 echo $PATH
 #/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 ```
 
-Using the *date* example again 
+We can confirm that the *date* executable lives in one of the above directories using the *which* command:
 
+``` bash
+which date
+#/usr/bin/date
+```
 
+We want to add the path to our new *welcome* function to this global variable. There are a few ways in how we could do this.
+
+**Option 1**
+
+We could simply copy our file to one of the paths already present in the path variable. */usr/local/bin* is the best option for this. But recall that all files installed in the root directory (anything outside of /home) are shared across all users. Therefore it is best practice to not install non-standard user defined scripts in here, unless you're certain all users of your system can avail of it.
+
+**Option 2**
+
+We could also add the path */home/student/test_folder/* to *PATH* via the command below, which sets *PATH* equal to its current value (*$PATH*) plus our new folder in which contains our script.
+
+``` bash
+PATH=$PATH:~/test_folder/
+echo $PATH
+#/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/student/test_folder/
+```
+
+This solution is also not ideal. As we get more adventurous (and lazy) we'll start writing more and more scripts to string together commands we're repeatably writing out. Updating *PATH* each time is a nuisance. Additionally we might want to rename our *test_folder* example to something more informative, in which case our path set above will become invalid.
+
+**Option 3**
+
+The standard solution to aggregating user defined scripts is to put them all in a known folder, namely *~/bin*. It is convenient to add all of our helper scripts to a single location.
+
+Lets create a new directory titled *bin* in our home directory, copy our script in there, and set the updated PATH. Start by opening a new terminal, then run the following:
+
+``` bash
+mkdir ~/bin
+cp ~/test_folder/welcome bin/
+PATH=$PATH:~/bin/
+```
+
+The only new thing we've used here is the *cp* function, with syntax ```cp <path/to/file> <path/to/target/folder>```. If we want to copy a folder and its contents to a new location, use ```cp -r ```.
+
+Confirm that our command works by running our script from multiple different directories.
+
+**Finally**
+
+When updating the *PATH* variable above, we have only done so locally in our terminal session. If we open a new terminal (new session), this update isn't present anymore. You can assess this behavior by opening a new terminal window (Ctrl+Alt+T) and add a second session (Ctrl+Shift+E). Below is a screenshot exhibiting the locality of a variable exported in a session:
+
+![test2](local_var.png)
+
+The 
 
 ## Manipulating files and their paths 
-mv, rm (rm -f), cp
+mv, rm (rm -f), cp, man
 
-## Install an executable
-install an executable
-$PATH, find a file
+## sudo
+
+## debs / snaps
 
 
 
