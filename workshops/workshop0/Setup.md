@@ -23,15 +23,11 @@ For running Ubuntu in a VM, we are using the *free* virtualizer application [Vir
 
 We have decided on **Ubuntu 20.04 LTS** as our chosen Linux distro. 22.04 has recently come out but the Humble Hawksbill ROS2 distribution (*latest ROS2 release*) is the only release primarily targeting 22.04, and comes out on the 23.05.2022. Its often worth waiting some time for new releases to run around in the wild before relying on them yourself, permitting time for open source contributors to adapt their ROS2 software packages to updates in the core stack. I imagine that by 2023 most of the robotics community using ROS2 will be using Humble Hawksbill and Ubuntu 22.04, as it is an LTS release promising 5 years of active support.
 
-TODO(degine LTS, add ros2 release page link)
-
 ___
 
 ## Setup Ubuntu in a Virtual Machine
 
 Lets start by outlining some useful terminology:
-
-TODO(define these better)
 
 > **Host operating system (host OS)**: This is the primary OS on the PC you're using, on which you will install the virtualizer application.
 >
@@ -55,23 +51,7 @@ What your system needs to run Ubuntu effectively in a VM:
 
 ### Loading the Pre-configured Image
 
-We have provided a preconfigured image to enable you to get up and running as fast as possible. Along with the raw iso, we also provide the VirtualBox config files to make the import process in VirtualBox smoother.
-
-1. Download the related files [here](here). TODO(provide link)
-2. Open VirtualBox.
-3. In the top left corner select 'File' then Import Appliance.
-4. Browse to the downloaded .ova file, click 'Next'.
-5. The default options are fine, click 'Import'.
-6. When the import has completed, select the VM followed by 'Start' at the top of the window.
-7. You will now boot into the machine running the Ubuntu 20.04 OS.
-
-```text
-User Info:
-
-Computer name: robotics-irl
-Username:      student
-Password:      robots
-```
+TODO(we're still configuring the image, we'll update this section soon!)
 
 ### Set Up Your Own Virtual Machine with Base Image
 
@@ -144,9 +124,13 @@ ___
 
 ## Dual Boot
 
+To dual boot your system, we recommend following the instructions [here][5] \[5]. Just remember to back up the files on your current OS to an SSD. The process can seem difficult (or dangerous), but just take your time and utilise a search tool to gain more clarity on each step. We recommend [Ubuntu 20.04](https://releases.ubuntu.com/20.04/).
+
 ___
 
 ## Full Install
+
+A full install wipes your PC entirely of your original OS and all its data. For this, we recommend these [instructions][6].
 
 ___
 
@@ -164,6 +148,8 @@ ___
 [2]: https://www.virtualbox.org/manual/UserManual.html#virt-why-useful
 [3]: https://releases.ubuntu.com/20.04/ubuntu-20.04.3-desktop-amd64.iso
 [4]: https://www.virtualbox.org/wiki/Downloads
+[5]: https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/
+[6]: https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
 
 \[1]: [https://pediaa.com/difference-between-linux-and-ubuntu/](https://pediaa.com/difference-between-linux-and-ubuntu/)
 
@@ -172,3 +158,6 @@ ___
 \[3]: [https://releases.ubuntu.com/20.04/ubuntu-20.04.3-desktop-amd64.iso](https://releases.ubuntu.com/20.04/ubuntu-20.04.3-desktop-amd64.iso)
 
 \[4]: [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+\[5]: [https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/](https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/)
+
